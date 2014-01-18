@@ -10,6 +10,7 @@
 VERSION="0.6.0"
 CONFIG=./deploy.conf
 LOG=/tmp/deploy.log
+LOG_REMOTE=/tmp/deploy_remote.log
 TEST=1
 REF=
 ENV=
@@ -166,7 +167,7 @@ hook() {
     log "executing $hook \`$cmd\`"
     run "cd $path/current; \
       SHARED=\"$path/shared\" \
-      $cmd 2>&1 | tee -a $LOG; \
+      $cmd 2>&1 | tee -a $LOG_REMOTE; \
       exit \${PIPESTATUS[0]}"
     test $? -eq 0
   else

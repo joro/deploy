@@ -3,6 +3,10 @@
 
   Minimalistic shell deployment shell script.
 
+## Changes from [visionmedia/deploy](https://github.com/visionmedia/deploy)
+
+Add LOG_REMOTE variable, so we can use different name for local log and remote log. This is for solving problem when ssh to localhost.
+
 ## Installation
 
     $ make install
